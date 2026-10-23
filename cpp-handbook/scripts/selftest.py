@@ -132,7 +132,7 @@ def main() -> int:
     check("L3 原文层入口存在", (SKILL_DIR / "scripts" / "kb_lookup.py").is_file())
 
     print("\n[8] 无知识库时 skill 必须仍能工作（降级为 SKIP 而不是 FAIL）")
-    nokb = tmp / "nokb" / "a" / "skill-c++"
+    nokb = tmp / "nokb" / "a" / "cpp-handbook"
     nokb.parent.mkdir(parents=True, exist_ok=True)
     shutil.copytree(SKILL_DIR, nokb, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
     code, out = run_in(nokb, "verify_bundle.py")

@@ -1,5 +1,5 @@
 ---
-name: skill-c++
+name: cpp-handbook
 description: >-
   Use when writing, reviewing, refactoring or debugging C++ (C++11–C++26) code:
   ownership and lifetime, move semantics, templates and Concepts, STL containers
@@ -19,7 +19,7 @@ mutating: false
 brain_first: exempt
 when_to_use: >-
   只覆盖通用 C++ 知识；项目私有约定以该项目自己的 AGENTS.md 为准。
-version: 2.1.0
+version: 2.2.0
 ---
 
 # C++ 编程知识手册

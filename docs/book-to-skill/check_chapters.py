@@ -1,6 +1,6 @@
 import pathlib
 
-d = pathlib.Path(r'F:\soft\00selfmade\skill-c++\skill-c++\chapters')
+d = pathlib.Path(r'F:\soft\00selfmade\skill-c++\cpp-handbook\chapters')
 FENCE = chr(96) * 3
 for f in sorted(d.glob('ch*.md')):
     t = f.read_text(encoding='utf-8')

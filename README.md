@@ -1,12 +1,12 @@
-# skill-c++
+# cpp-handbook
 
 > 给 AI 编程助手的 **C++ 知识手册**：15 章提炼 + 500 条 Core Guidelines 规则可核验 + 确定性检索路由。
 > 不靠 embedding 猜，靠关键词路由命中正确的章节。
 
-[![skill](https://img.shields.io/badge/Agent%20Skill-C%2B%2B-2.1.0-blue)](https://github.com/kizemo/skill-c-)
+[![skill](https://img.shields.io/badge/C%2B%2B%20Handbook-2.2.0-blue)](https://github.com/kizemo/cpp-handbook)
 [![tokens](https://img.shields.io/badge/load%20tier-3014%20tokens-green)](#4-它到底省了什么)
 [![eval](https://img.shields.io/badge/routing%20eval-43%2F43%20pass-brightgreen)](#5-检索是可测量的)
-[![license](https://img.shields.io/badge/content-CC%20BY%204.0%20%2F%20MIT-orange)](./skill-c++/chapters/ch14-sources.md)
+[![license](https://img.shields.io/badge/content-CC%20BY%204.0%20%2F%20MIT-orange)](./cpp-handbook/chapters/ch14-sources.md)
 
 ---
 
@@ -59,35 +59,32 @@ AI 写 C++ 时最常见的四种翻车：
 ### 安装（MiniMax Code）
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\skill-c++\install.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -File .\cpp-handbook\install.ps1
 ```
 
 脚本自动定位 skills 目录、写入 `kb_root.txt`、重写 frontmatter 里的 `name`、
-并在装完后跑一次 `verify_bundle.py` 验证。装完**重开会话**即可按 `skill-c++` 调用。
-
-跨宿主发布请换一个合规名（`+` 不在 Agent Skills 允许的字符集里）：
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\skill-c++\install.ps1 -SkillName skill-cpp
-```
+并在装完后跑一次 `verify_bundle.py` 验证。装完**重开会话**即可按 `cpp-handbook` 调用。
 
 ### 安装（其它宿主）
 
-把 `skill-c++/` 整个目录复制进宿主的 skills 目录即可，目录名必须与 frontmatter 的
+把 `cpp-handbook/` 整个目录复制进宿主的 skills 目录即可，目录名必须与 frontmatter 的
 `name` 一致：
 
 | 宿主 | 位置 | 状态 |
 |---|---|---|
-| **MiniMax Code** | `~/.minimax/.minimax/skills/skill-c++/` | ✅ 实测可用（本仓库主力目标） |
-| Claude Code | `~/.claude/skills/skill-c++/` | ✅ 目录式安装；`name` 需合规 |
+| **MiniMax Code** | `~/.minimax/.minimax/skills/cpp-handbook/` | ✅ 实测可用（本仓库主力目标） |
+| Claude Code | `~/.claude/skills/cpp-handbook/` | ✅ 目录式安装；`name` 需合规 |
 | Codex / Cursor / OpenCode 等 | 各自主机的 skills 目录 | ✅ 目录式安装；`name` 需合规 |
-| OpenAI / Codex 元数据 | — | `skill-c++/agents/openai.yaml` 提供 interface 描述 |
+| OpenAI / Codex 元数据 | — | `cpp-handbook/agents/openai.yaml` 提供 interface 描述 |
 
-> ⚠️ **`name: skill-c++` 不符合 Agent Skills 命名规范**（只允许小写字母/数字/连字符）。
-> MiniMax Code 按 frontmatter 的 `name:` 解析，接受 `+`；但 6 个跨宿主 lens
-> （amp / claude / copilot / hermes / openclaw / opencode）**全部拒绝**。
-> 这是保留 `skill-c++` 的自觉取舍（owner 指定名），跨宿主请用 `-SkillName skill-cpp`。
-> 本仓库名 `kizemo/skill-c-` 同样是这个原因——GitHub 仓库名同样不接受 `+`。
+> ✅ **`name: cpp-handbook` 符合 Agent Skills 命名规范**（`^[a-z0-9][a-z0-9-]*$`，只允许小写字母/数字/连字符）。
+> MiniMax Code 按 frontmatter 的 `name:` 解析，6 个跨宿主 lens
+> （amp / claude / copilot / hermes / openclaw / opencode）**全部接受**，
+> 不再需要 `-SkillName` 覆盖。
+>
+> 名字为什么是 `cpp-handbook`：① 规范；② 「C++ 手册」就是 skill 的自我定位；
+> ③ 不与上游文件名撞名（Core Guidelines / C++ Best Practices / cppreference / learncpp）；
+> ④ 避开旧名 `cpp-guidelines`——那会被误认成 Core Guidelines 文档本身。
 
 ### 使用
 
@@ -113,7 +110,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\skill-c++\install.ps1 -Ski
 
 改前 vs 改后（tiktoken 实测，脚本见 `docs/skill-forge/measure-tokens.py`）：
 
-| | 改前 v2.0 | 改后 v2.1 | 变化 |
+| | 改前 v2.0 | 改后 v2.2 | 变化 |
 |---|---|---|---|
 | 索引层 | 145 | **120** | -17% |
 | 加载层 | 3 932 | **3 014** | -23% |
@@ -130,15 +127,15 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\skill-c++\install.ps1 -Ski
 这是本项目与「随便写个 skill 目录」最大的区别：**检索有回归测试**。
 
 ```bash
-python skill-c++/scripts/route_eval.py     # 43 条路由用例，必须全绿
+python cpp-handbook/scripts/route_eval.py     # 43 条路由用例，必须全绿
 ```
 
 ```
 通过 43 条，失败 0 条（其中歧义 0 条、缺词 0 条）
 ```
 
-- `skill-c++/references/routing-eval.jsonl` — 43 条真实问法 → 期望章节
-- `skill-c++/references/hero-queries.md` — 触发路由评测（正向 10 / 负向 5 / 邻接混淆 4）
+- `cpp-handbook/references/routing-eval.jsonl` — 43 条真实问法 → 期望章节
+- `cpp-handbook/references/hero-queries.md` — 触发路由评测（正向 10 / 负向 5 / 邻接混淆 4）
 - 评测脚本零外部依赖，纯 stdlib，任何机器都能跑
 
 > 这套评测**真的抓到过东西**：首版索引表里没有「坑」「结构化绑定」「valgrind」
@@ -148,10 +145,10 @@ python skill-c++/scripts/route_eval.py     # 43 条路由用例，必须全绿
 ## 6. 可执行门禁（不要靠自觉）
 
 ```bash
-python skill-c++/scripts/verify_bundle.py   # 41 项：索引陈旧 / 指针失效 / 渐进式披露结构
-python skill-c++/scripts/selftest.py        # 25 项：脚本行为 + 无知识库降级
-python skill-c++/scripts/rule_lint.py .     # 规则号 lint（500 条真源白名单）
-python skill-c++/scripts/kb_lookup.py "ownership shared_ptr cycle" --top 6
+python cpp-handbook/scripts/verify_bundle.py   # 41 项：索引陈旧 / 指针失效 / 渐进式披露结构
+python cpp-handbook/scripts/selftest.py        # 25 项：脚本行为 + 无知识库降级
+python cpp-handbook/scripts/rule_lint.py .     # 规则号 lint（500 条真源白名单）
+python cpp-handbook/scripts/kb_lookup.py "ownership shared_ptr cycle" --top 6
 ```
 
 `verify_bundle.py` 覆盖 12 组检查，其中第 10 组专查**渐进式披露结构**
@@ -160,9 +157,9 @@ python skill-c++/scripts/kb_lookup.py "ownership shared_ptr cycle" --top 6
 ## 7. 目录结构
 
 ```
-skill-c-/
+cpp-handbook/
 ├── README.md                  ← 你正在读的这份
-├── skill-c++/                 ← skill 本体（复制这个目录去安装）
+├── cpp-handbook/                 ← skill 本体（复制这个目录去安装）
 │   ├── SKILL.md               ← L0 常驻层：路由表 + 铁律 + 红旗
 │   ├── chapters/              ← L3 专题层：ch01–ch15
 │   ├── references/
@@ -235,13 +232,13 @@ export CPP_KB_ROOT=/path/to/knowlege      # 环境变量
 
 ```bash
 # 改了 SKILL.md / 章节后，跑全套门禁
-python skill-c++/scripts/verify_bundle.py
-python skill-c++/scripts/selftest.py
-python skill-c++/scripts/route_eval.py
+python cpp-handbook/scripts/verify_bundle.py
+python cpp-handbook/scripts/selftest.py
+python cpp-handbook/scripts/route_eval.py
 
 # 改了知识库后，重建索引层（生成物禁止手改）
-python skill-c++/build_indexes.py            # 重建
-python skill-c++/build_indexes.py --check    # 只比对
+python cpp-handbook/build_indexes.py            # 重建
+python cpp-handbook/build_indexes.py --check    # 只比对
 
 # token 计量
 python docs/skill-forge/measure-tokens.py
@@ -257,7 +254,7 @@ python docs/skill-forge/measure-tokens.py
 
 ## 11. 来源与许可
 
-内容来自 20 个公开上游（完整台账见 `skill-c++/chapters/ch14-sources.md` 与
+内容来自 20 个公开上游（完整台账见 `cpp-handbook/chapters/ch14-sources.md` 与
 `knowledge-tools/sources.tsv`），其中包括 ISO C++ WG21 **Core Guidelines**、
 **Google C++ Style Guide**、**C++ Best Practices**、**cppreference**、
 **learncpp.com**、**Real-Time C++** 等。

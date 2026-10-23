@@ -25,7 +25,7 @@
 用法：
     cd <skill 目录>
     python scripts\\route_eval.py                              # 评测默认 skill 目录（脚本所在目录的上一级）
-    python scripts\\route_eval.py --skill D:\\path\\skill-c++    # 指定 skill 目录（跑安装后的副本）
+    python scripts\\route_eval.py --skill D:\\path\\cpp-handbook    # 指定 skill 目录（跑安装后的副本）
     python scripts\\route_eval.py --eval my-eval.jsonl          # 指定评测集（默认 references/routing-eval.jsonl）
     python scripts\\route_eval.py --verbose                     # 额外打印每个章节命中的触发词
 

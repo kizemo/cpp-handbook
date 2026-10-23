@@ -1,7 +1,7 @@
 # skill-forge 每次运行都会重写的管道产物
-skill-c++/audit-report.md
-skill-c++/best.md
-skill-c++/.skill-forge-baseline.json
+cpp-handbook/audit-report.md
+cpp-handbook/best.md
+cpp-handbook/.skill-forge-baseline.json
 
 # 知识库（约 1GB，独立 git 仓库，不进本仓库）
 knowlege/

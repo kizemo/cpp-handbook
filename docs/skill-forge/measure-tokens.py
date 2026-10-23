@@ -15,7 +15,7 @@ sys.dont_write_bytecode = True
 import tiktoken
 
 ROOT = Path(r"F:\soft\00selfmade\skill-c++")
-SKILL = ROOT / "skill-c++"
+SKILL = ROOT / "cpp-handbook"
 enc = tiktoken.get_encoding("cl100k_base")
 o200k = tiktoken.get_encoding("o200k_base")
 

@@ -1,5 +1,5 @@
 <#
-  Deploy the skill-c++ skill into the MiniMax Code skills directory.
+  Deploy the cpp-handbook skill into the MiniMax Code skills directory.
 
   ASCII-only on purpose: Windows PowerShell 5.1 parses .ps1 files as ANSI
   (GBK on this machine) when there is no BOM, so any non-ASCII character in
@@ -10,16 +10,16 @@
     powershell -NoProfile -ExecutionPolicy Bypass -File install.ps1 -Target <dir> -Kb <dir>
 
   -SkillName installs under a different slug and rewrites the frontmatter name
-  to match. The default slug "skill-c++" is what the owner asked for and the
-  MiniMax Code runtime resolves it by name, but the Agent Skills spec only
-  allows lowercase letters/digits/hyphens -- every host lens (amp, claude,
-  copilot, hermes, openclaw, opencode) rejects "+". Use a compliant slug such
-  as "skill-cpp" when publishing to other hosts.
+  to match. The default slug "cpp-handbook" already satisfies the Agent Skills
+  spec (lowercase letters, digits, hyphens only), so it needs no override and
+  is accepted by every host lens (amp, claude, copilot, hermes, openclaw,
+  opencode). Use the switch only to keep an older slug or to install a second
+  copy side by side.
 #>
 param(
     [string]$Target = "",
     [string]$Kb = "",
-    [string]$SkillName = "skill-c++"
+    [string]$SkillName = "cpp-handbook"
 )
 
 $ErrorActionPreference = 'Stop'

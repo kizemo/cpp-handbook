@@ -1,4 +1,4 @@
-# skill-forge 优化审计报告 · skill-c++ v2.0 → v2.1
+# skill-forge 优化审计报告 · cpp-handbook v2.0 → v2.2
 
 > 执行日期：2026-10-23　执行者：mavis（agent）
 > 工具链：[skill-forge](https://github.com/kizemo/skill-forge) v0.2.0（6 相管道）
@@ -48,7 +48,7 @@ skill-forge 的确定性轨迹判定（`_deterministic_trace`）直接判负。
 | 5 | token 预算 100 / 5000 / 无限 | ⚠️ | ✅ | 索引层 145→120，加载层 3932→3014（§4） |
 | 6 | 远距离作用（描述互不抢占） | ✅ | ✅ | `triggers:` 7 条为具体口语短语，与兄弟 skill 无重叠意图 |
 | 7 | 先写评测（hero queries） | ❌ | ✅ | 改前零评测；改后新增 hero-queries.md + routing-eval.jsonl + route_eval.py |
-| 8 | 目录名 == frontmatter name | ✅ | ✅ | 均为 `skill-c++` |
+| 8 | 目录名 == frontmatter name | ✅ | ✅ | 均为 `cpp-handbook`（v2.2 起合规） |
 
 **评分：3/8 → 8/8**（第 5 项为部分达成：索引层 120 tokens 仍略高于 ~100 的理想值，
 但已低于规范上限 1024 字符与 50 词。）
@@ -111,10 +111,9 @@ skill-forge 的确定性轨迹判定（`_deterministic_trace`）直接判负。
    审计 → 门禁 → 物化这条链路，没有假装它是机器生成的。
 2. **rubric 判官是执行者本人**，不是独立的第三方模型，存在同源偏差。
    已用确定性轨迹（①）与 43 条路由回归（③）交叉约束，降低单点依赖。
-3. **`name: skill-c++` 不符合 Agent Skills 命名规范**（`+` 不在允许字符集内）。
-   MiniMax Code 接受，6 个宿主 lens（amp/claude/copilot/hermes/openclaw/opencode）
-   全部拒绝。跨宿主发布用 `install.ps1 -SkillName skill-cpp` 重装（已实测 exit 0）。
-   GitHub 仓库名 `kizemo/skill-c-` 同样是这个原因。
+3. **命名已整改**（v2.2）：`name` 由 `skill-c++` 改为 `cpp-handbook`，符合 Agent Skills 规范
+   （`^[a-z0-9][a-z0-9-]*$`），6 个宿主 lens 全部接受，不再需要 `-SkillName` 覆盖。
+   GitHub 仓库同步改名为 `kizemo/cpp-handbook`（旧地址由 GitHub 301 跳转）。详见 §8。
 4. **索引层 120 tokens 仍高于 ~100 的理想值**，是有意为之：description 要覆盖
    中英双语 + 11 个主题域，砍掉会损失召回。
 
@@ -128,7 +127,32 @@ skill-forge 的确定性轨迹判定（`_deterministic_trace`）直接判负。
 | `best.md` | 管道物化的候选（= 改后 SKILL.md 全文） |
 | `baseline-description-v2.0.txt` | 改前 description 原文，供 token 复算 |
 | `measure-tokens.py` | 改前/改后 token 实测脚本（tiktoken） |
-| `../../skill-c++/skillopt-benchmark.jsonl` | 15 条真实基准题（替换模板行） |
-| `../../skill-c++/references/hero-queries.md` | 触发路由评测集（正向 10 / 负向 5 / 邻接 4） |
-| `../../skill-c++/references/routing-eval.jsonl` | 章节路由评测集（43 条） |
-| `../../skill-c++/scripts/route_eval.py` | 路由回归脚本（零依赖，43/43） |
+| `../../cpp-handbook/skillopt-benchmark.jsonl` | 15 条真实基准题（替换模板行） |
+| `../../cpp-handbook/references/hero-queries.md` | 触发路由评测集（正向 10 / 负向 5 / 邻接 4） |
+| `../../cpp-handbook/references/routing-eval.jsonl` | 章节路由评测集（43 条） |
+| `../../cpp-handbook/scripts/route_eval.py` | 路由回归脚本（零依赖，43/43） |
+
+---
+
+## 8. v2.2 改名记录
+
+| 项 | 改前 | 改后 |
+|---|---|---|
+| frontmatter `name` | `skill-c++` | **`cpp-handbook`** |
+| skill 目录名 | `skill-c++/` | **`cpp-handbook/`** |
+| `install.ps1` 默认 slug | `skill-c++` | **`cpp-handbook`** |
+| GitHub 仓库 | `kizemo/skill-c-` | **`kizemo/cpp-handbook`** |
+| 版本号 | 2.1.0 | 2.2.0 |
+
+**为什么选 `cpp-handbook`**
+
+| 判据 | 结论 |
+|---|---|
+| 规范（`^[a-z0-9][a-z0-9-]*$`） | ✅ 全小写 + 连字符，6 个宿主 lens 全部接受 |
+| 看得出用途 | ✅ 「C++ 手册」= skill 的自我定位「C++ 编程知识手册」，中英都读得懂 |
+| 不与上游撞名 | ✅ 上游叫 Core Guidelines / C++ Best Practices / cppreference / learncpp / Real-Time C++ |
+| 不与已装 skill 冲突 | ✅ 现有 skill 里无 `cpp-*` 前缀 |
+| 避开旧名 | ✅ `cpp-guidelines` 会被误认成 Core Guidelines 文档本身（且曾是本项目旧目录名） |
+
+**连带改动**：`verify_bundle.py` 的 frontmatter 原则门禁去掉了「name 含 `+` 可豁免」的
+特殊分支——名字现在合规，任何 frontmatter 警告都应当直接判失败。

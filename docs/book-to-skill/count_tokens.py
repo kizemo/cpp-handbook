@@ -13,7 +13,7 @@ from pathlib import Path
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-SKILL = Path(__file__).resolve().parent.parent / "skill-c++"
+SKILL = Path(__file__).resolve().parent.parent / "cpp-handbook"
 try:
     import tiktoken
 except ImportError:

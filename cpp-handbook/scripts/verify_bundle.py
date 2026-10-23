@@ -366,17 +366,13 @@ def check_frontmatter_principles() -> None:
         fail(f"frontmatter 解析失败: {exc}")
         return
     warnings = fm_mod.validate_skill_frontmatter(fm, skill_dir=SKILL_DIR)
-    # name 含 '+' 是已知且被用户明确接受的偏离：MiniMax Code 接受，
-    # 跨宿主用 install.ps1 -SkillName <合规名> 处理。不计入失败。
-    tolerable = [w for w in warnings if "kebab-case" in w]
-    hard = [w for w in warnings if w not in tolerable]
-    for w in tolerable:
-        print(f"  WARN  {w}")
-    if hard:
-        for w in hard:
+    # 名字已合规（cpp-handbook），不再有任何「可豁免的已知偏离」——
+    # 任何 frontmatter 警告都应当直接判失败。
+    if warnings:
+        for w in warnings:
             fail(w)
     else:
-        ok("frontmatter 符合 skill-forge 书写原则")
+        ok("frontmatter 符合 skill-forge 书写原则（零警告）")
 
 
 def _import_frontmatter_validator():
