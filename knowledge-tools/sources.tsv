@@ -1,0 +1,23 @@
+dir	repo	branch	lang	title
+01-core-guidelines	isocpp/CppCoreGuidelines	master	md	C++ Core Guidelines (ISO C++ WG21 official)
+02-core-guidelines-zh	lynnboy/CppCoreGuidelines-zh-CN	master	md	C++ Core Guidelines Simplified Chinese Translation
+03-best-practices	cpp-best-practices/cppbestpractices	master	md	C++ Best Practices (C.42 / Jason Turner)
+04-modern-cpp-tutorial	changkun/modern-cpp-tutorial	master	md	Modern C++ Tutorial: C++11 to C++26
+05-modern-cpp-course	federico-busato/Modern-CPP-Programming	master	md	Modern C++ Programming Course
+06-modern-cpp-features	AnthonyCalandra/modern-cpp-features	master	md	Modern C++ Features Cheatsheet
+07-algorithms	TheAlgorithms/C-Plus-Plus	master	cpp	The Algorithms - C++ implementations with examples
+08-leetcode-cases	kamyu104/LeetCode-Solutions	master	cpp	LeetCode Problems Solutions in C++
+09-google-style	google/styleguide	gh-pages	html	Google C++ Style Guide
+10-google-style-zh	shendeguize/GoogleCppStyleGuideCN	main	md	Google C++ Style Guide - Chinese Translation
+11-real-time-cpp	ckormanyos/real-time-cpp	master	md	Real-Time C++ - book references and examples
+12-iso-draft	cplusplus/draft	main	tex	ISO C++ Standard Working Draft (eel.is/c++draft)
+13-cmake-best-practices	cpp-best-practices/cmake_template	main	cmake	CMake Best Practices and Modern Project Template
+14-modern-cpp-starter	TheLartians/ModernCppStarter	main	md	Modern C++ Project Starter (CMake, CI, clang-format)
+15-awesome-cpp	fffaraz/awesome-cpp	master	md	Awesome C++ - curated resources index
+16-awesome-modern-cpp	rigtorp/awesome-modern-cpp	master	md	Awesome Modern C++ - curated resources index
+17-awesome-perf-cpp	fenbf/AwesomePerfCpp	master	md	Awesome C/C++ Performance Optimization Resources
+18-cppreference-doc	p12tic/cppreference-doc	master	html	C++ Standard Library Reference (cppreference offline copy)
+19-learncpp-cn	hanxiaomax/Learncpp_CN	main	md	LearnCpp.com Chinese Translation
+20-cpp-notes-cn	hengqiali/AwesomeCpp	master	md	AwesomeCpp - Chinese C++ notes and interview topics
+
+

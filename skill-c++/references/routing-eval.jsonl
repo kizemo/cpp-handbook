@@ -1,0 +1,43 @@
+{"id": "r01", "query": "shared_ptr 循环引用 怎么破？智能指针 该用 哪个", "expect": "ch01", "note": "命中 ch01 的 shared_ptr、循环引用、智能指针 三个触发词"}
+{"id": "r02", "query": "unique_ptr 和 weak_ptr 怎么选？所有权 该怎么 设计", "expect": "ch01", "note": "命中 ch01 的 unique_ptr、weak_ptr、所有权"}
+{"id": "r03", "query": "析构函数 里 释放 内存 怎么 写？生命周期 该 管 到 什么 程度", "expect": "ch01", "note": "命中 ch01 的 析构函数、生命周期"}
+{"id": "r04", "query": "std::move 和 std::forward 有什么区别？值类别 和 拷贝消除 怎么理解", "expect": "ch02", "note": "命中 ch02 的 std::move、std::forward、值类别、拷贝消除"}
+{"id": "r05", "query": "完美转发 转发 右值 引用 时 参数 怎么 传？std::forward 用错 会 怎样", "expect": "ch02", "note": "命中 ch02 的 完美转发、右值、std::forward"}
+{"id": "r06", "query": "移动语义 下 拷贝构造 和 移动构造 怎么 写？noexcept 要不要 标", "expect": "ch02", "note": "命中 ch02 的 移动语义、noexcept"}
+{"id": "r07", "query": "模板 写多了 报错 太 麻烦？SFINAE 和 Concepts 该 怎么 选", "expect": "ch03", "note": "命中 ch03 的 模板、SFINAE、Concepts"}
+{"id": "r08", "query": "CRTP 静态多态 的 模板 怎么 实现？requires 约束 给个 例子", "expect": "ch03", "note": "命中 ch03 的 CRTP、模板、requires、约束"}
+{"id": "r09", "query": "变参模板 转发 参数 有坑 吗？模板特化 和 概念 怎么 用", "expect": "ch03", "note": "命中 ch03 的 变参模板、模板、模板特化、概念，四个触发词把 ch11 的「坑」压过去"}
+{"id": "r10", "query": "vector 扩容 导致 迭代器失效 怎么 避免？erase-remove 写法 对 吗", "expect": "ch04", "note": "命中 ch04 的 vector、迭代器失效、迭代器、erase-remove"}
+{"id": "r11", "query": "unordered_map 和 map 怎么 选？容器选型 有没有 决策 表", "expect": "ch04", "note": "命中 ch04 的 unordered_map、map、容器选型"}
+{"id": "r12", "query": "string_view 和 迭代器 哪个 更 安全？算法 选 std::remove 还是 手写 循环", "expect": "ch04", "note": "命中 ch04 的 string_view、迭代器、算法、std::remove"}
+{"id": "r13", "query": "数据竞争 怎么 找？内存序 memory_order 和 条件变量 怎么 用", "expect": "ch05", "note": "命中 ch05 的 数据竞争、内存序、memory_order、条件变量"}
+{"id": "r14", "query": "多线程 共享 计数器 会不会 有 数据竞争？线程池 里 原子 和 锁 怎么 配", "expect": "ch05", "note": "命中 ch05 的 线程、数据竞争、线程池、原子、锁"}
+{"id": "r15", "query": "mutex 互斥锁 和 atomic 原子 该 用 哪个？并发 计数 怎么 才 安全", "expect": "ch05", "note": "命中 ch05 的 mutex、互斥锁、原子、并发"}
+{"id": "r16", "query": "错误处理 怎么 设计？异常 和 错误码 到底 选 哪个", "expect": "ch06", "note": "命中 ch06 的 错误处理、异常、错误码"}
+{"id": "r17", "query": "异常安全 三级 保证 怎么 做到？noexcept契约 该 怎么 写", "expect": "ch06", "note": "命中 ch06 的 异常、异常安全、noexcept契约；noexcept 同时被 ch02 命中但分数低"}
+{"id": "r18", "query": "try-catch 里 重新 抛出 该 怎么 写？预期值 std::expected 值得 用 吗", "expect": "ch06", "note": "命中 ch06 的 try-catch、预期值、std::expected"}
+{"id": "r19", "query": "性能优化 从 哪 下手？benchmark 和 复杂度 先 看 哪个", "expect": "ch07", "note": "命中 ch07 的 性能、优化、性能优化、benchmark、复杂度"}
+{"id": "r20", "query": "profiler 说 热点 在 内存 分配 上，缓存 和 基准测试 怎么 做", "expect": "ch07", "note": "命中 ch07 的 profiler、热点、分配、缓存、基准测试"}
+{"id": "r21", "query": "这段 代码 每个 循环 都 构造 临时 对象，复杂度 没 变 但 慢 很多，怎么 优化 才 有 性能 提升", "expect": "ch07", "note": "命中 ch07 的 复杂度、优化、性能"}
+{"id": "r22", "query": "C++20 有 哪些 特性 真 值得 用？现代C++ 和 C++17 怎么 选", "expect": "ch08", "note": "命中 ch08 的 C++20、特性、现代C++、C++17"}
+{"id": "r23", "query": "C++23 的 module 模块 支持 到 什么 程度 了？jthread 值不值得 用", "expect": "ch08", "note": "命中 ch08 的 C++23、模块、jthread"}
+{"id": "r24", "query": "ranges 怎么 引入 才 不 乱？C++11 到 C++26 的 版本选型 表 有 吗", "expect": "ch08", "note": "命中 ch08 的 ranges、C++11、C++26、版本选型；ranges 同时被 ch04 命中但分数低"}
+{"id": "r25", "query": "CMake 工程实践 怎么 搭？警告即错误 + 单元测试 + CI 流水线", "expect": "ch09", "note": "命中 ch09 的 CMake、工程实践、警告即错误、单元测试、测试、CI"}
+{"id": "r26", "query": "依赖管理 怎么做？目录结构 和 测试 要 不要 分 开放", "expect": "ch09", "note": "命中 ch09 的 依赖管理、目录结构、测试"}
+{"id": "r27", "query": "clang-format 和 警告即错误 怎么 一起 落地？CI 上 测试 跑 不 起来", "expect": "ch09", "note": "命中 ch09 的 clang-format、警告即错误、CI、测试"}
+{"id": "r28", "query": "ASan 报 heap-use-after-free 怎么 查？UBSan 和 sanitizer 能 一起 开 吗", "expect": "ch10", "note": "命中 ch10 的 ASan、UBSan、sanitizer"}
+{"id": "r29", "query": "gdb 调试器 断点 打 不 进去，core dump 转储 该 怎么 分析", "expect": "ch10", "note": "命中 ch10 的 gdb、调试器、core dump"}
+{"id": "r30", "query": "崩溃 了 怎么 定位？perf 工具链 和 编译警告 怎么 用", "expect": "ch10", "note": "命中 ch10 的 崩溃、perf、工具链、编译警告"}
+{"id": "r31", "query": "这些 写法 有 哪些 陷阱 和 反模式？虚析构 漏 写 会 怎样", "expect": "ch11", "note": "命中 ch11 的 陷阱、反模式、虚析构"}
+{"id": "r32", "query": "整数 溢出 是 未定义行为 吗？API误用 和 宏 带来 的 常见错误", "expect": "ch11", "note": "命中 ch11 的 溢出、未定义行为、API误用、宏"}
+{"id": "r33", "query": "auto 的 坑 在 哪？virtual destructor 漏 写 会 泄漏 吗？这 算 陷阱 吗", "expect": "ch11", "note": "命中 ch11 的 virtual destructor 与 陷阱；「泄漏」不等于 ch10 的 内存泄漏"}
+{"id": "r34", "query": "算法案例 有 哪些？LeetCode 题解 在 哪 一章", "expect": "ch12", "note": "命中 ch12 的 算法案例、案例、LeetCode、题解"}
+{"id": "r35", "query": "练习题 从 哪 开始 做？案例 索引 有 哪些 题解", "expect": "ch12", "note": "命中 ch12 的 练习题、案例、案例索引、题解"}
+{"id": "r36", "query": "学习路线 怎么 安排？入门 到 进阶 分 几个 阶段", "expect": "ch13", "note": "命中 ch13 的 学习路线、入门、进阶"}
+{"id": "r37", "query": "想 系统 学 C++，学习路径 有 吗？路线图 给 一份", "expect": "ch13", "note": "命中 ch13 的 学习路径、路线图"}
+{"id": "r38", "query": "零基础 怎么学 C++？进阶 顺序 和 入门 书单", "expect": "ch13", "note": "命中 ch13 的 怎么学、进阶、入门"}
+{"id": "r39", "query": "来源台账 在 哪？规则 的 出处 和 作者 许可 想 核对", "expect": "ch14", "note": "命中 ch14 的 来源、台账、来源台账、出处、作者、许可"}
+{"id": "r40", "query": "license 信息 和 来源清单 怎么 维护？每条 规则 的 许可 状态", "expect": "ch14", "note": "命中 ch14 的 license、来源清单、来源、许可"}
+{"id": "r41", "query": "知识地图 和 库结构 是 怎么 分 的？双链 约定 什么意思", "expect": "ch15", "note": "命中 ch15 的 知识地图、库结构、双链"}
+{"id": "r42", "query": "知识地图 在 哪 看？库结构 和 双链 怎么 串 起来", "expect": "ch15", "note": "命中 ch15 的 知识地图、库结构、双链"}
+{"id": "r43", "query": "这个 skill 的 库结构 是 怎么 组织的？知识地图 里 有 哪些 章节", "expect": "ch15", "note": "命中 ch15 的 库结构、知识地图"}

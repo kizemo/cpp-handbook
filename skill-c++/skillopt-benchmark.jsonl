@@ -1,0 +1,15 @@
+{"task_id":"cpp-001","task":"我要把一个 shared_ptr 管理的对象传给只读函数，应该按引用传还是按智能指针传？","judge":{"kind":"rule","checks":[{"op":"max_chars","arg":1500},{"op":"contains","arg":"引用"},{"op":"contains","arg":"F.7"}]}}
+{"task_id":"cpp-002","task":"两个 shared_ptr 互相引用导致对象一直不释放，怎么破？","judge":{"kind":"rule","checks":[{"op":"max_chars","arg":1500},{"op":"contains","arg":"weak_ptr"},{"op":"contains","arg":"R.24"}]}}
+{"task_id":"cpp-003","task":"std::move 之后原来的对象还能继续用吗？","judge":{"kind":"rule","checks":[{"op":"max_chars","arg":1500},{"op":"contains","arg":"移动"},{"op":"contains","arg":"值类别"}]}}
+{"task_id":"cpp-004","task":"vector 扩容之后我手里原来的迭代器还能用吗？","judge":{"kind":"rule","checks":[{"op":"max_chars","arg":1500},{"op":"contains","arg":"迭代器"},{"op":"contains","arg":"失效"}]}}
+{"task_id":"cpp-005","task":"两个线程同时改同一个计数器，怎么保证结果正确？","judge":{"kind":"rule","checks":[{"op":"max_chars","arg":1500},{"op":"contains","arg":"数据竞争"},{"op":"contains","arg":"CP"}]}}
+{"task_id":"cpp-006","task":"在 catch 块里又抛了一个新异常，应该怎么处理？","judge":{"kind":"rule","checks":[{"op":"max_chars","arg":1500},{"op":"contains","arg":"异常"},{"op":"contains","arg":"RAII"}]}}
+{"task_id":"cpp-007","task":"这个程序跑得太慢了，从哪下手优化？","judge":{"kind":"rule","checks":[{"op":"max_chars","arg":1500},{"op":"contains","arg":"优化"},{"op":"contains","arg":"复杂度"}]}}
+{"task_id":"cpp-008","task":"C++20 有哪些新特性值得我在项目里用起来？","judge":{"kind":"rule","checks":[{"op":"max_chars","arg":1500},{"op":"contains","arg":"C++20"},{"op":"contains","arg":"选型"}]}}
+{"task_id":"cpp-009","task":"CMake 工程怎么组织单元测试比较规范？","judge":{"kind":"rule","checks":[{"op":"max_chars","arg":1500},{"op":"contains","arg":"CMake"},{"op":"contains","arg":"测试"}]}}
+{"task_id":"cpp-010","task":"程序偶发崩溃，堆栈还丢了，怎么定位？","judge":{"kind":"rule","checks":[{"op":"max_chars","arg":1500},{"op":"contains","arg":"ASan"},{"op":"contains","arg":"调试器"}]}}
+{"task_id":"cpp-011","task":"帮我看看这段代码里藏着哪些未定义行为。","judge":{"kind":"rule","checks":[{"op":"max_chars","arg":1500},{"op":"contains","arg":"未定义行为"},{"op":"contains","arg":"Sanitizer"}]}}
+{"task_id":"cpp-012","task":"为什么删除元素要用 erase-remove 惯用法，不能直接 std::remove？","judge":{"kind":"rule","checks":[{"op":"max_chars","arg":1500},{"op":"contains","arg":"erase"},{"op":"contains","arg":"remove"}]}}
+{"task_id":"cpp-013","task":"模板参数怎么加编译期约束，让错误在编译期就暴露？","judge":{"kind":"rule","checks":[{"op":"max_chars","arg":1500},{"op":"contains","arg":"requires"},{"op":"contains","arg":"Concepts"}]}}
+{"task_id":"cpp-014","task":"析构函数里能不能抛异常？","judge":{"kind":"rule","checks":[{"op":"max_chars","arg":1500},{"op":"contains","arg":"析构"},{"op":"contains","arg":"terminate"}]}}
+{"task_id":"cpp-015","task":"Core Guidelines 里 R.20 这条规则到底说了什么？","judge":{"kind":"rule","checks":[{"op":"max_chars","arg":1500},{"op":"contains","arg":"R.20"},{"op":"contains","arg":"所有权"}]}}

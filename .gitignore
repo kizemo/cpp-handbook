@@ -1,0 +1,18 @@
+# skill-forge 每次运行都会重写的管道产物
+skill-c++/audit-report.md
+skill-c++/best.md
+skill-c++/.skill-forge-baseline.json
+
+# 知识库（约 1GB，独立 git 仓库，不进本仓库）
+knowlege/
+
+# GBrain 本机所有权标记（机器本地状态，不应进仓库）
+.gbrain-owner-*.json
+
+# 上一代 skill 归档与中间产物
+archive/
+.b2s/
+
+# Python 产物
+__pycache__/
+*.pyc
