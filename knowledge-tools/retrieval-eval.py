@@ -15,7 +15,7 @@ import os
 import re
 import subprocess
 
-ROOT = r"F:\soft\00selfmade\skill-c++\knowlege"
+ROOT = r"F:\soft\00selfmade\cpp-handbook\knowlege"
 SOURCE = "cpp-knowledge"
 
 # (提问, 期望命中的页面 slug, 提问类型)

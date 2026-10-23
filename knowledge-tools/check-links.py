@@ -19,7 +19,7 @@ import re
 import sys
 from collections import defaultdict
 
-ROOT = r"F:\soft\00selfmade\skill-c++\knowlege"
+ROOT = r"F:\soft\00selfmade\cpp-handbook\knowlege"
 LINK = re.compile(r"\[\[([^\]|#]+?)(?:\|[^\]]*)?\]\]")
 MDLINK = re.compile(r"\[[^\]]+\]\(([^)#]+\.md)(?:#[^)]*)?\)")
 FENCE = re.compile(r"(?ms)^```.*?^```")

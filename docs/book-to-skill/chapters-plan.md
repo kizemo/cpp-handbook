@@ -49,7 +49,7 @@
 ## 自验命令
 
 ```powershell
-python F:\soft\00selfmade\skill-c++\cpp-handbook\scripts\rule_lint.py F:\soft\00selfmade\skill-c++\cpp-handbook\chapters\<你的文件名>
+python F:\soft\00selfmade\cpp-handbook\cpp-handbook\scripts\rule_lint.py F:\soft\00selfmade\cpp-handbook\cpp-handbook\chapters\<你的文件名>
 ```
 
 必须 **0 错误**。有 ERROR 就修到没有为止（WARN 可以接受，但要看一眼是不是真问题）。
