@@ -1,12 +1,39 @@
-# cpp-handbook
+# C++ Handbook
 
 > 给 AI 编程助手的 **C++ 知识手册**：15 章提炼 + 500 条 Core Guidelines 规则可核验 + 确定性检索路由。
 > 不靠 embedding 猜，靠关键词路由命中正确的章节。
+
+**安装名（frontmatter `name` / 仓库名）**：`cpp-handbook`
 
 [![skill](https://img.shields.io/badge/C%2B%2B%20Handbook-2.2.0-blue)](https://github.com/kizemo/cpp-handbook)
 [![tokens](https://img.shields.io/badge/load%20tier-3014%20tokens-green)](#4-它到底省了什么)
 [![eval](https://img.shields.io/badge/routing%20eval-43%2F43%20pass-brightgreen)](#5-检索是可测量的)
 [![license](https://img.shields.io/badge/content-CC%20BY%204.0%20%2F%20MIT-orange)](./cpp-handbook/chapters/ch14-sources.md)
+
+### 为什么 slug 是 `cpp-handbook` 而不是 `C++-handbook`
+
+Agent Skills 规范只允许小写字母/数字/连字符，GitHub 仓库名同样不接受 `+`
+（`skill-c++` 会被 GitHub 存成 `skill-c-`）。而 **`cpp` 就是业界在"不能写 `+`"
+时对 C++ 的标准 ASCII 写法**——不是我们的生造词。
+
+本项目 20 个上游里，有 **17 个必须在仓库名里拼出 C++**，其中 **15 个用的是
+`cpp` / `Cpp` / `CPP`**，只有 2 个用全拼：
+
+| 上游 | 真实仓库名 | 拼法 |
+|---|---|---|
+| C++ Core Guidelines（ISO WG21 官方） | `isocpp/CppCoreGuidelines` | `Cpp` |
+| C++ Best Practices | `cpp-best-practices/cppbestpractices` | `cpp` |
+| Google C++ 风格指南（中文版） | `shendeguize/GoogleCppStyleGuideCN` | `Cpp` |
+| Real-Time C++ | `ckormanyos/real-time-cpp` | `cpp` |
+| Awesome C++ | `fffaraz/awesome-cpp` | `cpp` |
+| **ISO C++ 标准草案** | `cplusplus/draft` | `cplusplus`（少数派全拼） |
+| TheAlgorithms | `TheAlgorithms/C-Plus-Plus` | `C-Plus-Plus`（少数派全拼） |
+
+反过来看，`cplusplus` 和 `cxx`（CMake 的 `CMAKE_CXX_STANDARD`、GCC 的 `-x c++` 惯例）
+才是**更冷僻**的写法。完整台账见 [`knowledge-tools/sources.tsv`](./knowledge-tools/sources.tsv)，skill 内的 [`ch14-sources.md`](./cpp-handbook/chapters/ch14-sources.md)「20 个来源总览」表也逐条列出了每个上游的真实仓库名。
+
+**面向人的界面一律写 `C++`**：本页标题、`SKILL.md` 的一级标题「C++ 编程知识手册」、
+`agents/openai.yaml` 的 `display_name`。`cpp-handbook` 只是**机器读的标识符**。
 
 ---
 

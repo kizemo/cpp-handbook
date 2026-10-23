@@ -153,6 +153,7 @@ skill-forge 的确定性轨迹判定（`_deterministic_trace`）直接判负。
 | 不与上游撞名 | ✅ 上游叫 Core Guidelines / C++ Best Practices / cppreference / learncpp / Real-Time C++ |
 | 不与已装 skill 冲突 | ✅ 现有 skill 里无 `cpp-*` 前缀 |
 | 避开旧名 | ✅ `cpp-guidelines` 会被误认成 Core Guidelines 文档本身（且曾是本项目旧目录名） |
+| 业界通用 | ✅ 本项目 20 个上游里 17 个须在仓库名拼出 C++，其中 **15 个用 `cpp`/`Cpp`/`CPP`**（`isocpp/CppCoreGuidelines`、`cpp-best-practices/cppbestpractices`、`fffaraz/awesome-cpp`…），仅 2 个全拼（`cplusplus/draft`、`TheAlgorithms/C-Plus-Plus`）。`cpp` 是「不能写 `+` 时」的标准 ASCII 写法 |
 
 **连带改动**：`verify_bundle.py` 的 frontmatter 原则门禁去掉了「name 含 `+` 可豁免」的
 特殊分支——名字现在合规，任何 frontmatter 警告都应当直接判失败。
