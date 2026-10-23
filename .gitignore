@@ -16,3 +16,7 @@ archive/
 # Python 产物
 __pycache__/
 *.pyc
+
+# 一次性脚本
+.repath.py
+
